@@ -1,7 +1,7 @@
 # MSUD CS 1
 ## Solutions of selected exercises from IPJ 2nd ed
 ### Chapter 1
-[1.1.6](./tree/master/homework-solutions/usethree)
+[1.1.6](homework-solutions/usethree)
 
 1.2.8
 
