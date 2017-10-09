@@ -39,7 +39,7 @@
 
 1.5.26
 
-1.5.30
+[1.5.30](homework-solutions/histogram)
 
 
 ### Chapter 2
