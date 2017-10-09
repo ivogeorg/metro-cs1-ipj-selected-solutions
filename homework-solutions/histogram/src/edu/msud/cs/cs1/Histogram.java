@@ -16,7 +16,6 @@ public class Histogram {
 
     public static void main(String[] args) {
 
-        // TODO
         // 0. Givens (DONE)
         //    n - number of intervals of the histogram
         //    lo - lower bound of doubles
@@ -30,7 +29,7 @@ public class Histogram {
         Histogram.doubles = new double[1000];
         generator(lo, hi);
 
-        // 3. A way to find the interval in which each double falls
+        // 3. A way to find the interval in which each double falls (DONE)
         int[] intervals = new int[n];
         double width = (hi - lo) / n;
 
@@ -40,8 +39,11 @@ public class Histogram {
             intervals[intervalIndex] ++;
         }
 
+        // Sanity check: print the interval counts
         for (int i=0; i<n; i++)
             StdOut.println(intervals[i]);
+
+        // TODO: Use StdDraw to draw the histogram
 
     }
 
