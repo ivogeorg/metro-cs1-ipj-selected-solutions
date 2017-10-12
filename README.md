@@ -47,11 +47,11 @@
 
 2.1.30
 
-2.2.2
+[2.2.2]/(homework-solutions/hyperbolic-lib)
 
-2.2.12
+[2.2.12](homework-solutions/matrix-lib)
 
-2.2.23
+[2.2.23](homework-solutions/integer-lib)
 
 
 ### Chapter 3
