@@ -47,11 +47,11 @@
 
 2.1.30
 
-[2.2.2 (guidance, _in progress_)](homework-solutions/hyperbolic-lib)
+[2.2.2 (guidance)](homework-solutions/hyperbolic-lib)
 
-[2.2.12 (guidance _in progress_)](homework-solutions/matrix-lib)
+[2.2.12 (guidance, _upcoming_)](homework-solutions/matrix-lib)
 
-[2.2.23 (guidance _in progress_)](homework-solutions/integer-lib)
+[2.2.23 (guidance _upcoming_)](homework-solutions/integer-lib)
 
 
 ### Chapter 3
