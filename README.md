@@ -1,7 +1,7 @@
 # MSUD CS 1
 ## Solutions of selected exercises from IPJ 2nd ed
 ### Chapter 1
-[1.1.6](homework-solutions/usethree)
+[1.1.6 (solution)](homework-solutions/usethree)
 
 1.2.8
 
@@ -39,7 +39,7 @@
 
 1.5.26
 
-[1.5.30](homework-solutions/histogram)
+[1.5.30 (partial solution)](homework-solutions/histogram)
 
 
 ### Chapter 2
@@ -47,11 +47,11 @@
 
 2.1.30
 
-[2.2.2]/(homework-solutions/hyperbolic-lib)
+[2.2.2 (guidance)](homework-solutions/hyperbolic-lib)
 
-[2.2.12](homework-solutions/matrix-lib)
+[2.2.12 (guidance)](homework-solutions/matrix-lib)
 
-[2.2.23](homework-solutions/integer-lib)
+[2.2.23 (guidance)](homework-solutions/integer-lib)
 
 
 ### Chapter 3
