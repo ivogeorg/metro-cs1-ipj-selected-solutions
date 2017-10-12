@@ -8,7 +8,7 @@ IPJ 2.2.2
   * Pick _descriptive variable names_. E.g. `doublesArray` for an array of double values is okay, `arr` is **not**; `r` for radius is okay, `var5` is **not**.
   * Space out the operators of your assignment, arithmetic, and comparison expressions. E.g. `r <= 0.1` is preferred to `r<=0.1`; `int i = 0;` is preferred to `int i=0;`.
   * Call your class `Hyperbolic`.
-2. You are asked to create a mini-library like the Java `Math` for [hyperbolic functions](https://en.wikipedia.org/wiki/Hyperbolic_function). They are the hyperbolic equivalents of the standard trigonometric functions, and are _continous_ and _differentiable_. Make sure your library methods work with `double` values only.
+2. You are asked to create a mini-library like the Java `Math` for [hyperbolic functions](https://en.wikipedia.org/wiki/Hyperbolic_function). They are the hyperbolic equivalents of the standard trigonometric functions, and are _continous_ and _differentiable_. Make sure your library methods work with `double` parameters/arguments and return values only. See the separate sectionon the distinction between [parameters and arguments](#parameters-and-arguments).
 3. You are asked to implement 6 methods: `sinh(x)`, `cosh(x)`, `tanh(x)`, `coth(x)`, `sech(x)`, and `csch(x)`. Note that the last four are defined in terms of the first two. Follow this definition in your implementation for consistency.
 4. Just like the `Math` class methods, the `Hyperbolic` methods should be `public static`. See the separate section on [`static`](#static-vs-non-static).
 5. Just like the `Math` class, `Hyperbolic` should throw `ArithmeticException` whenever a forbidden or undefined operations is attempted. Java exceptions are required in the CS 1050 curriculum so we'll use this opportunity to introduce them gently. See the separate section on [Exceptions](#exceptions) below. You will need to handle:
@@ -16,6 +16,21 @@ IPJ 2.2.2
   * Attempts to operate on values outside of the defined ranges of the functions.
 6. Note that like the trigonometric functions in `Math`, the methods of `Hyperbolic` should work in [_radians_](https://en.wikipedia.org/wiki/Radian).
 
-### Exceptions
+### Parameters and arguments
+
+In the function definition below
+```java
+int add(int a, int b) {
+  return a + b;
+}
+```
+`a` and `b` are called _parameters_. However, in the following call to `add()`
+```java
+int x = 9, y = 81;
+int z = add(x, y);
+```
+`x` and `y` are called _arguments_.
 
 ### `static` vs non-`static`
+### Exceptions
+
