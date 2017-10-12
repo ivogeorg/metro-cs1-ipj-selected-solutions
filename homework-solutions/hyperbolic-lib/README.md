@@ -1,4 +1,4 @@
-### Guidance _(in progress)_
+### Guidance
 IPJ 2.2.2
 ### Notes
 
