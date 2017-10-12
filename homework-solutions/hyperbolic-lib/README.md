@@ -10,9 +10,12 @@ IPJ 2.2.2
   * Call your class `Hyperbolic`.
 2. You are asked to create a mini-library like the Java `Math` for [hyperbolic functions](https://en.wikipedia.org/wiki/Hyperbolic_function). They are the hyperbolic equivalents of the standard trigonometric functions, and are _continous_ and _differentiable_. Make sure your library methods work with `double` values only.
 3. You are asked to implement 6 methods: `sinh(x)`, `cosh(x)`, `tanh(x)`, `coth(x)`, `sech(x)`, and `csch(x)`. Note that the last four are defined in terms of the first two. Follow this definition in your implementation for consistency.
-4. Just like the `Math` class, `Hyperbolic` should throw `ArithmeticException` whenever a forbidden or undefined operations is attempted. Java exceptions are required in the CS 1050 curriculum so we'll use this opportunity to introduce them gently. See the separate section on [Exceptions](#exceptions) below. You will need to handle:
+4. Just like the `Math` class methods, the `Hyperbolic` methods should be `public static`. See the separate section on [`static`](#static-vs-non-static).
+5. Just like the `Math` class, `Hyperbolic` should throw `ArithmeticException` whenever a forbidden or undefined operations is attempted. Java exceptions are required in the CS 1050 curriculum so we'll use this opportunity to introduce them gently. See the separate section on [Exceptions](#exceptions) below. You will need to handle:
   * Attempts to divide by zero (since some of the functions are defined as ratios).
   * Attempts to operate on values outside of the defined ranges of the functions.
-5. Note that like the trigonometric functions in `Math`, the methods of `Hyperbolic` should work in [_radians_](https://en.wikipedia.org/wiki/Radian).
+6. Note that like the trigonometric functions in `Math`, the methods of `Hyperbolic` should work in [_radians_](https://en.wikipedia.org/wiki/Radian).
 
 ### Exceptions
+
+### `static` vs non-`static`
