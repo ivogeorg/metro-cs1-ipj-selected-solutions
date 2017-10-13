@@ -3,7 +3,7 @@
 ### Chapter 1
 [1.1.6 (solution)](homework-solutions/usethree)
 
-1.2.8
+[1.2.8 (partial solution)](homework-solutions/quadratic)
 
 1.2.14
 
