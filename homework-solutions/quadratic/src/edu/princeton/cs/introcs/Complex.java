@@ -41,6 +41,11 @@ public class Complex {
         im = imag;
     }
 
+    // copy constructor with static new instance
+    public static Complex Complex(Complex complex) {
+        return new Complex(complex.re(), complex.im());
+    }
+
     // return a string representation of the invoking Complex object
     public String toString() {
         if (im == 0) return re + "";

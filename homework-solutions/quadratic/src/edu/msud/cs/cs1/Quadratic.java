@@ -3,45 +3,52 @@ package edu.msud.cs.cs1;
 import edu.princeton.cs.introcs.Complex;
 import edu.princeton.cs.introcs.StdOut;
 
-public class Quadratic
-{
-    private double a, b, c;
+public class Quadratic {
     private Complex root1, root2;
-    private boolean real;
-    private boolean imaginary;
+    private boolean real, complex, same;
+
 
     public Quadratic(double a, double b, double c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+        if (a == 0.0)
+            throw new ArithmeticException("Quadratic: quadratic coefficient cannot be zero");
 
-        // TODO solve & assign
+        double determinant = b * b - 4.0 * a * c;
 
+        if (determinant > 0.0) { // real and different roots
+            root1 = new Complex((-b + Math.sqrt(determinant)) / (2.0 * a), 0.0);
+            root2 = new Complex((-b - Math.sqrt(determinant)) / (2.0 * a), 0.0);
+        } else if (determinant == 0.0) { // real and equal roots
+            root1 = new Complex(-b / (2 * a), 0.0);
+            root2 = Complex.Complex(root1);
+        } else { // complex roots
+            root1 = new Complex(-b / (2 * a), Math.sqrt(-determinant) / (2 * a));
+            root2 = new Complex(-b / (2 * a), -Math.sqrt(-determinant) / (2 * a));
+        }
 
+        real = (determinant >= 0.0);
+        complex = ! this.real;
+        same = root1.equals(root2);
     }
 
     public boolean isReal() {
         return real;
     }
 
-    public boolean isImaginary() {
-        return imaginary;
+    public boolean isComplex() {
+        return complex;
     }
 
     public boolean isSame() {
         return same;
     }
 
-    private boolean same;
-
     public Complex[] roots() {
-        Complex[] roots = { root1, root2 };
+        Complex[] roots = {root1, root2};
         return roots;
     }
 
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         if (args.length != 3) {
             StdOut.println("usage: Quadratic coeff_a coeff_b coeff_c");
             System.exit(1);
@@ -52,12 +59,14 @@ public class Quadratic
         double b = Double.parseDouble(args[1]);
         double c = Double.parseDouble(args[2]);
 
-        Quadratic quadratic = new Quadratic(a, b, c);
-        StdOut.println("Roots: " + quadratic.root1 + ", " + quadratic.root2);
+        if (a == 0.0) {
+            StdOut.println("error: quadratic coefficient cannot be zero");
+            System.exit(1);
 
-//        double discriminant = b*b - 4.0*c;
-//        double d = Math.sqrt(discriminant);
-//        System.out.println((-b + d) / 2.0);
-//        System.out.println((-b - d) / 2.0);
+        }
+
+        Quadratic quadratic = new Quadratic(a, b, c);
+        Complex[] roots = quadratic.roots();
+        StdOut.println("Roots: " + roots[0] + ", " + roots[1]);
     }
 }
