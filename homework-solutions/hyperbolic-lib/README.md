@@ -74,6 +74,6 @@ try {
 }
 ```
 Notice:
-  * Only statements inside the `try {} catch` code block with be caught.
+  * Only statements inside the `try {} catch` code block will be caught.
   * We can catch excpeptions of _specific_ classes.
   * The full syntax adds more flexibility and use cases (see this [reference](https://en.wikibooks.org/wiki/Java_Programming/Throwing_and_Catching_Exceptions)) but this is fine for a start. 
