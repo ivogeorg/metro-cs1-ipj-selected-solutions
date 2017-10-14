@@ -49,9 +49,9 @@
 
 [2.2.2 (guidance, including _Parameters vs arguments_, _`static` vs non-`static`_, and _Exceptions_)](homework-solutions/hyperbolic-lib)
 
-[2.2.12 (guidance, _upcoming_)](homework-solutions/matrix-lib)
+[2.2.12 (guidance, _in progress_)](homework-solutions/matrix-lib)
 
-[2.2.23 (guidance _upcoming_)](homework-solutions/integer-lib)
+[2.2.23 (guidance _in progress_)](homework-solutions/integer-lib)
 
 
 ### Chapter 3
