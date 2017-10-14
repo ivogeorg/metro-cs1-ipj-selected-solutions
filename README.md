@@ -51,7 +51,7 @@
 
 [2.2.12 (guidance)](homework-solutions/matrix-lib)
 
-[2.2.23 (guidance _in progress_)](homework-solutions/integer-lib)
+[2.2.23 (guidance)](homework-solutions/integer-lib)
 
 
 ### Chapter 3
