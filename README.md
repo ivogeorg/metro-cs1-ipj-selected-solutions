@@ -53,6 +53,12 @@
 
 [2.2.23 (guidance)](homework-solutions/integer-lib)
 
+2.3.15
+
+2.3.17
+
+2.3.34
+
 
 ### Chapter 3
 
