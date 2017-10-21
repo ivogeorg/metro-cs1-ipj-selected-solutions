@@ -1,3 +1,3 @@
 TODO
   * avoid `String`
-  * more elegant calculation of the new `tail`
+  * more elegant and efficient calculation of `tail` for the recursive call
