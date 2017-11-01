@@ -61,6 +61,8 @@
 
 
 ### Chapter 3
+3.1.4
 
-### Chapter 4
+[3.1.29 (guidance)](homework-solutions/raw-picture)
+
 
