@@ -6,13 +6,13 @@ IPJ 3.1.29 (modified)
 
 1. Do not write a library of `static` methods, but an instantiable Java class `RawPicture`. That is, each `RawPicture` should be an object that contains all its data in private fields. 
 2. You will need members/fields/variables for:
-  * Height
-  * Width
-  * All the pixel values, each of which is a `Color` triple. Use the `java.awt.Color` to represent each individual pixel.
-  * File name it was read from, if any
-  * File name it would be written to by the `write()` method
-  * `Picture`, for when you create a `RawPicture` from a `Picture`
-  * `BifferedImage`, for when you create a `RawPicture` from a file read into a `BufferedImage` (see below)
+    * Height
+    * Width
+    * All the pixel values, each of which is a `Color` triple. Use the `java.awt.Color` to represent each individual pixel.
+    * File name it was read from, if any
+    * File name it would be written to by the `write()` method
+    * `Picture`, for when you create a `RawPicture` from a `Picture`
+    * `BifferedImage`, for when you create a `RawPicture` from a file read into a `BufferedImage` (see below)
 3. Use the IPJ `Picture.java` library to read in a GIF, JPG or PNG image from a file, and then the `get()` method to get the pixel values.
 4. Your class should have three (3) constructors:
     1. `RawPicture()`
