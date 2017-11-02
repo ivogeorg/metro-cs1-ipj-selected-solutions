@@ -61,7 +61,7 @@
 
 
 ### Chapter 3
-3.1.4
+[3.1.4 (guidance)](homework-solutions/grayscale-histogram)
 
 [3.1.29 (guidance)](homework-solutions/raw-picture)
 
