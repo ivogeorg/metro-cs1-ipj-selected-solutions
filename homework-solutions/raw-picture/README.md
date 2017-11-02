@@ -27,6 +27,6 @@ IPJ 3.1.29 (modified)
         * If the file is in one of the GIF, JPG or PNG formats, borrow the code from the `Picture(String filename)` constructor to open a `File` and read the data into an image, using the Java classes [`javax.imageio.ImageIO`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html) and [`java.awt.image.BufferedImage`](https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html). 
         * Afterwards, use the proper methods of the `BufferedImage` object to populate the private data members of `RawPicture`
         * If the image is in the _raw_ format, written by `write()`, as specified below, use `read()` to read in the data and populate the private members of `RawPicture` directly
-5. The `read()` and `write(String toFilename)` methods should not work with `Picture` objects. 
+5. The `read()` and `write()` methods should not work with `Picture` objects. 
     1. `read(String fromFilename)` should read a `RawPicture` from a _raw_ file (see below)
     2. `write(String toFilename)` should write the data of a `RawPicture` to a file. Use the extension `.RAW` to be able to distinguish from GIF, JPG or PNG files for the constructor which takes a filename
