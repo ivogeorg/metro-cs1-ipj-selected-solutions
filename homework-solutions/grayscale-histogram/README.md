@@ -4,7 +4,7 @@ IPJ 3.1.4
 ### Notes
 
 1. Use the `edu.princeton.cs.introcs.Picture` library to read in the image.
-2. Use the `edu.princeton.cs.introcs.Luminance` class to convert to grayscale. Create a new package under `src` with the name `edu.princeton.cs.introcs` and then download the [source file](https://introcs.cs.princeton.edu/java/31datatype/Luminance.java) into it. `Luminance` has a method `toGray` which takes a `Color` and returns the `Color` converted to grayscale. Note that the returned `Color` continues to have 3 channels. See the Channels section for an explanation.
+2. Use the `edu.princeton.cs.introcs.Luminance` class to convert to grayscale. Create a new package under `src` with the name `edu.princeton.cs.introcs` and then download the [source file](https://introcs.cs.princeton.edu/java/31datatype/Luminance.java) into it. `Luminance` has a method `toGray` which takes a `Color` and returns the `Color` converted to grayscale. Note that the returned `Color` continues to have 3 channels. See the [Channels](#channels) section for an explanation.
 3. Query the `Picture` object you created to count the occurrences of each grayscale shade in the image.
 
 ### Channels
