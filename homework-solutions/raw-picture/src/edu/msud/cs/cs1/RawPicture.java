@@ -39,10 +39,10 @@ public class RawPicture {
     }
 
     public RawPicture(String filename) {
+        // initialize relevant private members
         fromFilename = filename;
-        picture = new Picture(filename);
-        height = picture.height();
-        width = picture.width();
+
+        // TODO
         // if image is GIF, JPG, or PNG
         // ... populate pixels from BufferedImage read from a File
         // else
@@ -57,5 +57,7 @@ public class RawPicture {
         // TODO
     }
 
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        // TODO
+    }
 }
