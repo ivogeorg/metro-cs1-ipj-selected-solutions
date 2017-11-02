@@ -55,6 +55,49 @@ Here is the code for the `Color` constructor, showing how it uses _bitwise_ oper
         testColorValueRange(r,g,b,a);
     }
 ```
-_Note: The `<<` operator is the bitwise left-shift operator and causes the bits in a word (32-bit value) to be shifted to the left. The left-hand operand is the value, and the right-hand operand is the number of bits to shift it. The `|` is a bitwise or operator and is needed to pack the 4 values together into the private `value` field of `Color`._
+The `<<` operator is the _bitwise left-shift_ operator and causes the bits in a word (32-bit value) to be shifted to the left. The left-hand operand is the value, and the right-hand operand is the number of bits to shift it. The `&` is the _bitwise and_ operator and is used to apply a mask (here all-ones) to the original value. The `|` is a bitwise or operator and is needed to pack the 4 values together into the private `value` field of `Color`. Graphically, the first line of the expression for `value` above does the following:
+```
+ |--------|--------|--------|--------|
+ |00000000|00000000|00000000| alpha  |
+ |--------|--------|--------|--------|
+31       23       15        7        0  - bits for a
+
+ |--------|--------|--------|--------|
+ |11111111|11111111|11111111|11111111|
+ |--------|--------|--------|--------|
+31       23       15        7        0  - bits for mask 0xFF
+
+ |--------|--------|--------|--------|
+ | alpha  |00000000|00000000|00000000|
+ |--------|--------|--------|--------|
+31       23       15        7        0  - bits for (a & 0xFF) << 24 (left shift fills with zeros)
+```
+The top-level operation of the full expression, which achieves the final packing, works as follows:
+```
+ |--------|--------|--------|--------|
+ | alpha  |00000000|00000000|00000000|
+ |--------|--------|--------|--------|
+31       23       15        7        0  - bits for (a & 0xFF) << 24
+
+ |--------|--------|--------|--------|
+ |00000000|  red   |00000000|00000000|
+ |--------|--------|--------|--------|
+31       23       15        7        0  - bits for (r & 0xFF) << 16
+
+ |--------|--------|--------|--------|
+ |00000000|00000000| green  |00000000|
+ |--------|--------|--------|--------|
+31       23       15        7        0  - bits for (g & 0xFF) << 8
+
+ |--------|--------|--------|--------|
+ |00000000|00000000|00000000|  blue  |
+ |--------|--------|--------|--------|
+31       23       15        7        0  - bits for (b & 0xFF) (no shift necessary)
+
+ |--------|--------|--------|--------|
+ | alpha  |  red   | green  |  blue  |
+ |--------|--------|--------|--------|
+31       23       15        7        0  - after top-level bitwise or
+```
 
 When a pixel represented by a `Color` object is converted to _grayscale_, the luminance equation converts the 3 color values to a single monochrome luminance (aka [luma](https://en.wikipedia.org/wiki/Luma_(video))) value. The `Color` object packs the same value into all 3 RGB positions. While this might look like a waste of memory, and it might appear that a sigle `byte` is enough to store the value, [_memory alignment_](https://www.ibm.com/developerworks/library/pa-dalign/) will require it to be converted to a 32-bit value anyway.
