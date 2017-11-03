@@ -13,7 +13,7 @@ public class LargestPalindrome {
         return s.equals((new StringBuffer(s)).reverse().toString());
     }
 
-    private String longestPaliSub(String s, int length) {
+    private String longestPaliSub(String s, int length) { // this is the recursive function
         // TODO
         // Hint: Use ArrayList to collect the substrings of a particular length
         // Hint: You terminate the recursion when you find a palindrome or length == 1
