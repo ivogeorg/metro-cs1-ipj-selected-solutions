@@ -57,7 +57,7 @@
 
 2.3.17
 
-2.3.34
+[2.3.34 (guidance)](homework-solutions/largest-palindrome)
 
 
 ### Chapter 3
