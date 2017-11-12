@@ -1,4 +1,4 @@
-### Guidance
+### Partial Solution
 
 IPJ 2.3.34
 
