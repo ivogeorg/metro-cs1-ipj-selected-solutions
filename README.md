@@ -57,7 +57,7 @@
 
 2.3.17
 
-[2.3.34 (guidance)](homework-solutions/largest-palindrome)
+[2.3.34 (partial solution)](homework-solutions/largest-palindrome)
 
 
 ### Chapter 3
@@ -73,7 +73,7 @@
 
 3.2.13
 
-3.2.30
+[3.2.30 (partial solution)](homework-solutions/periodic-table)
 
 3.3.4
 

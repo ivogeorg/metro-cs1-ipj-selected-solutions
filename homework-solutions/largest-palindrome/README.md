@@ -1,4 +1,4 @@
-### Guidance
+### Partial Solution
 
 IPJ 2.3.34
 
@@ -13,7 +13,7 @@ IPJ 2.3.34
     * The palindrome is off-center in the containing string, which gives us a perfect used case.
     * If a string is a palindrome, it reads the same in forward and reverse. So we need to be able to reverse a string. Using the [`StringBuffer::reverse()`](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html#reverse--) method seems to be the most elegant way to do this in Java.
     * Next, we need to be able to generate substrings of a string. The [`String::substring(int, int)`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-) method is perfect for that as we can control the start and the end character to be included, by index.
-    * Since we are looking for the **longest** palindrome, we should generate substrings of decreasing length.
+    * Since we are looking for the **longest** palindrome, we should generate and check all substrings of each length, decreasing from the full length of the given string to 2. Characters are trivially palindromes of length 1.
     * So, we generate substings of decreasing length and check if they are palindromes.
     * _Recursion_ is best for problems that apply the same strategy to sub-problems of decreasing size. We have one!
         
@@ -26,4 +26,4 @@ length | substrings of that length | any palindromes?
       4| alco, lcoh, coho, ohol    | no
       3| alc, lco, coh, oho, hol   | yes
 ```
-5. How are we sure that this is the **longest palindrome**? _We have tried all longer substrings and they aren't._
+5. How are we sure that this is the **longest palindrome**? _We have tried all longer substrings and they weren't._
