@@ -73,7 +73,7 @@
 
 3.2.13
 
-3.2.30
+[3.2.30 (partial solution)](homework-solutions/periodic-table)
 
 3.3.4
 
