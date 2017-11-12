@@ -125,4 +125,19 @@ public class ChemicalElement {
     public void setFusionD(double fusionD) {
         this.fusionD = fusionD;
     }
+
+    @Override
+    public String toString() {
+        return (new StringBuffer())
+                .append(elementS)
+                .append(numberB)
+                .append(symbolS)
+                .append(weightD)
+                .append(boilD)
+                .append(meltD)
+                .append(densityI)
+                .append(vaporD)
+                .append(fusionD)
+                .toString();
+    }
 }

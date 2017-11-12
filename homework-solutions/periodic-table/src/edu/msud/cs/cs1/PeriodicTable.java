@@ -38,18 +38,17 @@ public class PeriodicTable {
 
         if (!success) return success;
 
+        // declare and initialize variables that might be useful for handling exceptions (see catch block)
         String line = "";
         ChemicalElement element = null;
         try {
             while (file.hasNext()) {
                 line = file.nextLine();
-
-                // DEBUGDEBUG
-                System.out.println(line);
-
                 Scanner elementData = new Scanner(line).useDelimiter("\\s*,\\s*");
+
                 element = new ChemicalElement(); // element with nonsensical defaults
                 table.add(element); // have to add it ahead of time
+
                 // read in data, parsing when necessary, and set the element's fields
                 if (elementData.hasNext()) element.setElementS(elementData.next()); else continue;
                 if (elementData.hasNext()) element.setNumberB(Byte.parseByte(elementData.next())); else continue;
