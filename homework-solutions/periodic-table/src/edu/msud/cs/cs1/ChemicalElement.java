@@ -129,14 +129,14 @@ public class ChemicalElement {
     @Override
     public String toString() {
         return (new StringBuffer())
-                .append(elementS)
-                .append(numberB)
-                .append(symbolS)
-                .append(weightD)
-                .append(boilD)
-                .append(meltD)
-                .append(densityI)
-                .append(vaporD)
+                .append("Chemical element: ").append(elementS)
+                .append(" [").append(numberB).append(" | ").append(symbolS).append("]\n")
+                .append(" Weight: ").append(weightD).append('\n')
+                .append(" Density: ").append(densityI).append('\n')
+                .append(" Temp (b|m|v|f): ")
+                .append(boilD).append(',')
+                .append(meltD).append(',')
+                .append(vaporD).append(',')
                 .append(fusionD)
                 .toString();
     }
