@@ -17,4 +17,4 @@ IPJ 3.2.30
 7. Note that the data is so regular, that the `else continue;` statements are not necessary, since the `elementData.hasNex()` takes care of the missing values (including the _"missing"_ value after the last comma).
 8. If an exception is thrown, the added element is removed from the table as it might be malformed.
 9. Note that `ChemicalElement` needs a _default constructor_ and _variable setters_ for this read-in algorithm to work.
-10. Note that this code does not handle the _header_ row in the CSV file (it's removed in `elements-small.csv`). You can handle it by reading in one line before the `while` loop. You can do with the header what you want.
+10. Note that this code does not handle the _header_ row in the CSV file (it's removed in `elements-small.csv` which I used for testing). You can handle it by reading in one line before the `while` loop. You can do with the header what you want.
