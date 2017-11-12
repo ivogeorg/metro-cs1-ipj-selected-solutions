@@ -128,15 +128,16 @@ public class ChemicalElement {
 
     @Override
     public String toString() {
+        // TODO report missing values with 'unknown' or 'n/a' instead of the nonsensical defaults
         return (new StringBuffer())
                 .append("Chemical element: ").append(elementS)
                 .append(" [").append(numberB).append(" | ").append(symbolS).append("]\n")
                 .append(" Weight: ").append(weightD).append('\n')
                 .append(" Density: ").append(densityI).append('\n')
                 .append(" Temp (b|m|v|f): ")
-                .append(boilD).append(',')
-                .append(meltD).append(',')
-                .append(vaporD).append(',')
+                .append(boilD).append(", ")
+                .append(meltD).append(", ")
+                .append(vaporD).append(", ")
                 .append(fusionD)
                 .toString();
     }

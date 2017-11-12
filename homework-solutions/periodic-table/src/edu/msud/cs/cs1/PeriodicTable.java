@@ -53,11 +53,11 @@ public class PeriodicTable {
                 if (elementData.hasNext()) element.setElementS(elementData.next()); else continue;
                 if (elementData.hasNext()) element.setNumberB(Byte.parseByte(elementData.next())); else continue;
                 if (elementData.hasNext()) element.setSymbolS(elementData.next()); else continue;
-                if (elementData.hasNext()) element.setWeightD(Double.parseDouble(elementData.next()));
-                if (elementData.hasNext()) element.setBoilD(Double.parseDouble(elementData.next()));
-                if (elementData.hasNext()) element.setMeltD(Double.parseDouble(elementData.next()));
-                if (elementData.hasNext()) element.setDensityI(Integer.parseInt(elementData.next()));
-                if (elementData.hasNext()) element.setVaporD(Double.parseDouble(elementData.next()));
+                if (elementData.hasNext()) element.setWeightD(Double.parseDouble(elementData.next())); else continue;
+                if (elementData.hasNext()) element.setBoilD(Double.parseDouble(elementData.next())); else continue;
+                if (elementData.hasNext()) element.setMeltD(Double.parseDouble(elementData.next())); else continue;
+                if (elementData.hasNext()) element.setDensityI(Integer.parseInt(elementData.next())); else continue;
+                if (elementData.hasNext()) element.setVaporD(Double.parseDouble(elementData.next())); else continue;
                 if (elementData.hasNext()) element.setFusionD(Double.parseDouble(elementData.next()));
             }
         } catch (NumberFormatException nfe) {
