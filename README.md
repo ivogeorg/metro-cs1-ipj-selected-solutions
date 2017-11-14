@@ -1,9 +1,9 @@
 # MSUD CS 1
 ## Solutions of selected exercises from IPJ 2nd ed
 ### Chapter 1
-[1.1.6 (solution)](homework-solutions/usethree)
+[1.1.6 Use Three (solution)](homework-solutions/usethree)
 
-[1.2.8 (solution, _in progress_)](homework-solutions/quadratic)
+[1.2.8 Quadratic (solution, _in progress_)](homework-solutions/quadratic)
 
 1.2.14
 
@@ -39,52 +39,40 @@
 
 1.5.26
 
-[1.5.30 (partial solution)](homework-solutions/histogram)
+[1.5.30 Histogram (partial solution)](homework-solutions/histogram)
 
 
 ### Chapter 2
-2.1.14
+2.1.14 Checksum
 
-2.1.30
+2.1.30 Calendar
 
-[2.2.2 (guidance, including _programming best practices_, _Parameters vs arguments_, _`static` vs non-`static`_, and _Exceptions_)](homework-solutions/hyperbolic-lib)
+[2.2.2 Hiperbolic Library (guidance, including _programming best practices_, _Parameters vs arguments_, _`static` vs non-`static`_, and _Exceptions_)](homework-solutions/hyperbolic-lib)
 
-[2.2.12 (guidance)](homework-solutions/matrix-lib)
+[2.2.12 Matrix Library (guidance)](homework-solutions/matrix-lib)
 
-[2.2.23 (guidance)](homework-solutions/integer-lib)
+[2.2.23 Integer/Long Library (guidance)](homework-solutions/integer-lib)
 
-2.3.15
+2.3.15 Binary Representation
 
-2.3.17
+[2.3.17 Permutations (solution)](homework-solutions/permutations)
 
-[2.3.34 (partial solution)](homework-solutions/largest-palindrome)
+[2.3.34 Longest Palindrome (partial solution)](homework-solutions/largest-palindrome)
 
 
 ### Chapter 3
-[3.1.4 (guidance)](homework-solutions/grayscale-histogram)
+[3.1.4 Grayscale Histogram (guidance)](homework-solutions/grayscale-histogram)
 
-[3.1.29 (guidance)](homework-solutions/raw-picture)
+[3.1.29 Raw Picture (guidance)](homework-solutions/raw-picture)
 
-3.2.7
+3.2.7 Rational
 
-3.2.8
+3.2.8 Interval
 
-3.2.12
+3.2.12, 3.2.13 Stopwatch 
 
-3.2.13
+[3.2.30 Periodic Table (partial solution)](homework-solutions/periodic-table)
 
-[3.2.30 (partial solution)](homework-solutions/periodic-table)
+3.3.4, 3.3.5, 3.3.6, 3.3.13, 3.3.14, 3.3.16 Vector
 
-3.3.4
-
-3.3.5
-
-3.3.6
-
-3.3.13
-
-3.3.14
-
-3.3.16
-
-3.3.23
+3.3.23 Pseudo-Random Number Generator
