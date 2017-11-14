@@ -55,7 +55,7 @@
 
 2.3.15 Binary Representation
 
-2.3.17 Permutations
+[2.3.17 Permutations (solution)](homework-solutions/permutations)
 
 [2.3.34 Longest Palindrome (partial solution)](homework-solutions/largest-palindrome)
 
