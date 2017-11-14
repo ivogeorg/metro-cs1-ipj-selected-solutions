@@ -73,6 +73,44 @@ public class PeriodicTable {
         return success;
     }
 
+    public ChemicalElement getElement(String symbol) throws UnknownChemicalElement {
+        ChemicalElement element = null;
+        for (ChemicalElement ce: table) {
+            if (ce.getSymbolS().equals(symbol)) {
+                element = ce;
+                break;
+            }
+        }
+        if (element == null) throw new UnknownChemicalElement(symbol);
+        return element;
+    }
+
+    // TODO finish...
+    public double molecularWeight(String formula) {
+        double weight = 0.0;
+        StringBuffer symbol = null;
+        ChemicalElement element = null;
+        int numAtoms = 1;
+        for (int i=0; i<formula.length(); i++) {
+            char c = formula.charAt(i);
+            if (Character.isAlphabetic(c)) {
+                if (Character.isUpperCase(c)) {
+                    if (symbol != null) {
+//                        weight += table
+                    }
+                    symbol = new StringBuffer(c);
+                }
+            } else if (Character.isDigit(c)) {
+
+            } else {
+                System.err.println("ERROR: Unexpected character in formula \'"+c+"\'");
+                return 0.0;
+            }
+        }
+
+        return weight;
+    }
+
     public static void main(String[] args) {
         PeriodicTable table = new PeriodicTable();
 
