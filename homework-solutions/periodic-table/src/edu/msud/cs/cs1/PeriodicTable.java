@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.*;
 
 public class PeriodicTable {
     public static final byte NUMBER_OF_CHEMICAL_ELEMENTS = 118; // https://en.wikipedia.org/wiki/Chemical_element
+    private static final String SIMPLE_CHEM_FORMULA_PATTERN = "(([A-Z][a-z]?)([1-9]?))+?";
 
     private ArrayList<ChemicalElement> table;
 
@@ -126,39 +128,16 @@ public class PeriodicTable {
 
     public double molecularWeight(String formula) {
         double weight = 0.0;
-        StringBuffer symbol = null;
-        ChemicalElement element = null;
-        int numAtoms = 1;
-        for (int i=0; i<formula.length(); i++) {
-            char c = formula.charAt(i);
-            if (Character.isAlphabetic(c)) {
-                if (Character.isUpperCase(c)) {
-                    if (symbol != null) { // previous symbol
-                        try {
-                            weight += getElement(symbol.toString()).getWeightD() * numAtoms;
-                        } catch (UnknownChemicalElement uce) {
-                            System.err.println("ERROR: " + uce.getMessage());
-                            return 0.0;
-                        }
-                    }
-                    symbol = new StringBuffer().append(c); // StringBuffer(c) interprets c as int for initial capacity
-                    numAtoms = 1;
-                } else {
-                    // assume symbol is not null and there is a capital letter in it already
-                    symbol.append(c); // Fun code inspection here :D
-                }
-            } else if (Character.isDigit(c)) {
-                // assume symbol is not null and there is something in it
-                try {
-                    weight += getElement(symbol.toString()).getWeightD() * (int) c; // Fun code inspection here :D
-                } catch (UnknownChemicalElement uce) {
-                    System.err.println("ERROR: " + uce.getMessage());
-                    return 0.0;
-                }
-                symbol = null;
-                numAtoms = 1;
-            } else {
-                System.err.println("ERROR: Unexpected character in formula \'"+c+"\'");
+        Pattern p = Pattern.compile(SIMPLE_CHEM_FORMULA_PATTERN); // notice the reluctant "one or more" qualifier +?
+        Matcher m = p.matcher(formula);
+        while (m.find()) {
+            String symbol = m.group(2);
+            String numAtomStr = m.group(3);
+            int numAtoms = (numAtomStr.equals("")) ? 1 : Integer.parseInt(numAtomStr);
+            try {
+                weight += getElement(symbol).getWeightD() * numAtoms;
+            } catch (UnknownChemicalElement uce) {
+                System.err.println("ERROR: " + uce.getMessage());
                 return 0.0;
             }
         }
@@ -166,17 +145,49 @@ public class PeriodicTable {
         return weight;
     }
 
+    // for demonstration purposes
+    // try in main():
+    //        matchFormula("H");
+    //        matchFormula("H2");
+    //        matchFormula("H2O");
+    //        matchFormula("H2O2");
+    //        matchFormula("KMnO4");
+    //        matchFormula("H2SO4 ");
+    private static void matchFormula(String formula) {
+        Pattern p = Pattern.compile("(([A-Z][a-z]?)([1-9]?))+?"); // notice the reluctant "one or more" qualifier +?
+        Matcher m = p.matcher(formula);
+        while (m.find()) {
+            System.out.print("Start index: " + m.start());
+            System.out.print(" End index: " + m.end() + " ");
+            System.out.print(m.group() + " ");
+            System.out.print(m.group(2) + " ");
+            String numAtoms = m.group(3);
+            if (numAtoms.equals(""))
+                System.out.println("0");
+            else
+                System.out.println(numAtoms);
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         PeriodicTable table = new PeriodicTable();
 
         if (table.read(args[0], true)) {
             System.out.println("Elements read: " + table.getTable().size());
-            for (ChemicalElement element: table.getTable()) System.out.println(element);
+//            for (ChemicalElement element: table.getTable()) System.out.println(element);
         } else {
             System.err.println("Problem reading file \'" + args[0] + "\'");
         }
 
-//        System.out.println("Molecular weight of H2O is " + table.molecularWeight("H2O"));
+        System.out.println("Molecular weight of H is " + table.molecularWeight("H"));
+        System.out.println("Molecular weight of H2 is " + table.molecularWeight("H2"));
+        System.out.println("Molecular weight of H2O is " + table.molecularWeight("H2O"));
+        System.out.println("Molecular weight of H2O2 is " + table.molecularWeight("H2O2"));
+        System.out.println("Molecular weight of CO is " + table.molecularWeight("CO"));
+        System.out.println("Molecular weight of CO2 is " + table.molecularWeight("CO2"));
+        System.out.println("Molecular weight of H2SO4 is " + table.molecularWeight("H2SO4"));
+        System.out.println("Molecular weight of KMnO4 is " + table.molecularWeight("KMnO4"));
 
         // test what next() does with a missing value
 //        Scanner test = new Scanner("Boron,5,B,10.81,2303.16,,2340,536.01,22.19,").useDelimiter(",");
