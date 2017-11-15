@@ -71,7 +71,7 @@
 
 3.2.12, 3.2.13 Stopwatch 
 
-[3.2.30 Periodic Table (partial solution)](homework-solutions/periodic-table)
+[3.2.30 Periodic Table (solution)](homework-solutions/periodic-table)
 
 3.3.4, 3.3.5, 3.3.6, 3.3.13, 3.3.14, 3.3.16 Vector
 
