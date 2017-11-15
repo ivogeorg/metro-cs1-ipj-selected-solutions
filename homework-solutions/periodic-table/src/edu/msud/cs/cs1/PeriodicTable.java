@@ -163,7 +163,7 @@ public class PeriodicTable {
             System.out.print(m.group(2) + " ");
             String numAtoms = m.group(3);
             if (numAtoms.equals(""))
-                System.out.println("0");
+                System.out.println("1");
             else
                 System.out.println(numAtoms);
         }
@@ -188,6 +188,15 @@ public class PeriodicTable {
         System.out.println("Molecular weight of CO2 is " + table.molecularWeight("CO2"));
         System.out.println("Molecular weight of H2SO4 is " + table.molecularWeight("H2SO4"));
         System.out.println("Molecular weight of KMnO4 is " + table.molecularWeight("KMnO4"));
+        System.out.println("Molecular weight of KZoO4 is " + table.molecularWeight("KZoO4"));
+
+//                matchFormula("H");
+//                matchFormula("H2");
+//                matchFormula("H2O");
+//                matchFormula("H2O2");
+//                matchFormula("KMnO4");
+//                matchFormula("H2SO4 ");
+
 
         // test what next() does with a missing value
 //        Scanner test = new Scanner("Boron,5,B,10.81,2303.16,,2340,536.01,22.19,").useDelimiter(",");
