@@ -19,3 +19,4 @@ IPJ 3.2.30
 9. Note that `ChemicalElement` needs a _default constructor_ and _variable setters_ for this read-in algorithm to work.
 10. `read` has been updated to handle a header row.
 11. `molecularWeight` has been implemented with Java [regular expressions](http://www.vogella.com/tutorials/JavaRegularExpressions/article.html) for code cleanliness and readability. Note that only simple chemical formulae of the form `symbol-optional digit-symbol-optional digit-...` are handled. The [general case](https://www.periodni.com/solcalc-chemical_compounds.html) requires more complex regular expressions.
+12. I have created and handled a `UnknownChemicalElementException` to illustrate the main points. Incidentally, this is a _checked_ exception.

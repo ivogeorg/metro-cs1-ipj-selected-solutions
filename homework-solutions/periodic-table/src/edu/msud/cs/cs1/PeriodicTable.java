@@ -114,7 +114,7 @@ public class PeriodicTable {
         return success;
     }
 
-    public ChemicalElement getElement(String symbol) throws UnknownChemicalElement {
+    public ChemicalElement getElement(String symbol) throws UnknownChemicalElementException {
         ChemicalElement element = null;
         for (ChemicalElement ce: table) {
             if (ce.getSymbolS().equals(symbol)) {
@@ -122,7 +122,7 @@ public class PeriodicTable {
                 break;
             }
         }
-        if (element == null) throw new UnknownChemicalElement(symbol);
+        if (element == null) throw new UnknownChemicalElementException(symbol);
         return element;
     }
 
@@ -136,7 +136,7 @@ public class PeriodicTable {
             int numAtoms = (numAtomStr.equals("")) ? 1 : Integer.parseInt(numAtomStr);
             try {
                 weight += getElement(symbol).getWeightD() * numAtoms;
-            } catch (UnknownChemicalElement uce) {
+            } catch (UnknownChemicalElementException uce) {
                 System.err.println("ERROR: " + uce.getMessage());
                 return 0.0;
             }
